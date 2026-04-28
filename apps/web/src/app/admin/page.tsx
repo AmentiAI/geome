@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 import { auth } from "@clerk/nextjs/server";
 import { db } from "@/lib/db/client";
 import { levels, levelReports, users } from "@/lib/db/schema";
-import { eq, desc, and, isNull } from "drizzle-orm";
+import { eq, desc, and, isNull, count } from "drizzle-orm";
 import { isAdmin } from "@/lib/auth";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/badge";
 export const dynamic = "force-dynamic";
 
 async function load() {
-  const [pendingLevels, openReports, userCount] = await Promise.all([
+  const [pendingLevels, openReports, userCountRows] = await Promise.all([
     db
       .select({ id: levels.id, name: levels.name, createdAt: levels.createdAt, creator: users.username })
       .from(levels)
@@ -32,8 +32,9 @@ async function load() {
       .where(and(isNull(levelReports.resolvedAt)))
       .orderBy(desc(levelReports.createdAt))
       .limit(50),
-    db.$count(users),
+    db.select({ value: count() }).from(users),
   ]);
+  const userCount = userCountRows[0]?.value ?? 0;
   return { pendingLevels, openReports, userCount };
 }
 
