@@ -31,13 +31,14 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
   }
 
   // Recompute aggregates
-  const [{ likes, dislikes }] = await db
+  const rows = await db
     .select({
       likes: sql<number>`count(*) filter (where value = 1)::int`,
       dislikes: sql<number>`count(*) filter (where value = -1)::int`,
     })
     .from(levelLikes)
     .where(eq(levelLikes.levelId, levelId));
+  const { likes = 0, dislikes = 0 } = rows[0] ?? {};
 
   await db.update(levels).set({ likes, dislikes }).where(eq(levels.id, levelId));
 
