@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx drizzle-kit *)",
+      "Bash(apt list *)",
+      "Bash(mkdir -p /tmp/db-push)",
+      "Read(//tmp/**)",
+      "Bash(npm init *)",
+      "Bash(npm install *)"
+    ]
+  }
+}

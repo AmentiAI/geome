@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8checkpoint_geome"]
+
+[ext_resource type="Script" path="res://scripts/objects/checkpoint.gd" id="1_chk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(30, 60)
+
+[node name="Checkpoint" type="Area2D"]
+script = ExtResource("1_chk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1")
+
+[node name="Visual" type="ColorRect" parent="."]
+offset_left = -15.0
+offset_top = -30.0
+offset_right = 15.0
+offset_bottom = 30.0
+color = Color(0.06, 0.73, 0.51, 0.5)

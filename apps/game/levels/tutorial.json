@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "name": "Tutorial",
+  "description": "Tap or click to jump.",
+  "creatorId": "system",
+  "difficulty": "easy",
+  "settings": {
+    "speed": 1,
+    "background": "dark-city",
+    "groundColor": "#1a1a2e",
+    "songOffsetMs": 0,
+    "bpm": 120,
+    "gameMode": "cube"
+  },
+  "objects": [
+    { "type": "spike", "x": 480, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 720, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "block", "x": 960, "y": 510, "rotation": 0, "scale": 1 },
+    { "type": "block", "x": 990, "y": 510, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 1080, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "jump_pad", "x": 1320, "y": 540, "rotation": 0, "scale": 1 },
+    { "type": "coin", "x": 1380, "y": 380, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 1620, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 1650, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "block", "x": 1860, "y": 510, "rotation": 0, "scale": 1 },
+    { "type": "block", "x": 1890, "y": 480, "rotation": 0, "scale": 1 },
+    { "type": "block", "x": 1920, "y": 450, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 2100, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "checkpoint", "x": 2280, "y": 510, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 2520, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "portal_speed", "x": 2700, "y": 510, "rotation": 0, "scale": 1, "props": { "tier": 2 } },
+    { "type": "spike", "x": 2940, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 3120, "y": 525, "rotation": 0, "scale": 1 }
+  ]
+}

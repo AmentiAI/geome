@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8coin_geome"]
+
+[ext_resource type="Script" path="res://scripts/objects/coin.gd" id="1_coin"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 11.0
+
+[node name="Coin" type="Area2D"]
+script = ExtResource("1_coin")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Visual" type="Polygon2D" parent="."]
+color = Color(0.98, 0.8, 0.08, 1)
+polygon = PackedVector2Array(11, 0, 7.78, 7.78, 0, 11, -7.78, 7.78, -11, 0, -7.78, -7.78, 0, -11, 7.78, -7.78)
