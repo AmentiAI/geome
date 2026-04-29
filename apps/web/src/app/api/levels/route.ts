@@ -62,7 +62,7 @@ export async function POST(req: Request) {
   }
   const { data } = parsed.data;
 
-  const [created] = await db
+  const createdRows = await db
     .insert(levels)
     .values({
       creatorId: localUser.id,
@@ -75,6 +75,8 @@ export async function POST(req: Request) {
       publishedAt: new Date(),
     })
     .returning({ id: levels.id });
+  const created = createdRows[0];
+  if (!created) return new NextResponse("Insert failed", { status: 500 });
 
   await db.insert(levelData).values({
     levelId: created.id,
