@@ -9,6 +9,8 @@ func _ready() -> void:
     var level_id := _read_query_param("level")
     if level_id.is_empty():
         _load_local_tutorial()
+    elif level_id.begins_with("local:"):
+        _load_local(level_id.substr(6))
     else:
         _load_remote(level_id)
 
@@ -26,8 +28,16 @@ func _read_query_param(name: String) -> String:
     return ""
 
 func _load_local_tutorial() -> void:
-    var json_text := FileAccess.get_file_as_string("res://levels/tutorial.json")
+    _load_local("tutorial")
+
+func _load_local(slug: String) -> void:
+    var path := "res://levels/%s.json" % slug
+    if not FileAccess.file_exists(path):
+        push_error("Local level not found: %s" % path)
+        return
+    var json_text := FileAccess.get_file_as_string(path)
     var data: Dictionary = JSON.parse_string(json_text)
+    data["id"] = "local:%s" % slug
     _spawn_level(data)
 
 func _load_remote(level_id: String) -> void:

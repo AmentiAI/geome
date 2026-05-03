@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "name": "Neon Drift",
+  "description": "Faster, longer, gravity flips. Don't blink.",
+  "creatorId": "system",
+  "difficulty": "normal",
+  "settings": {
+    "speed": 1.2,
+    "background": "neon-grid",
+    "groundColor": "#0e0b1f",
+    "songOffsetMs": 0,
+    "bpm": 140,
+    "gameMode": "cube"
+  },
+  "objects": [
+    { "type": "spike", "x": 540, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 600, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "coin", "x": 720, "y": 420, "rotation": 0, "scale": 1 },
+
+    { "type": "block", "x": 840, "y": 510, "rotation": 0, "scale": 1 },
+    { "type": "block", "x": 870, "y": 510, "rotation": 0, "scale": 1 },
+    { "type": "block", "x": 900, "y": 510, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 960, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 990, "y": 525, "rotation": 0, "scale": 1 },
+
+    { "type": "jump_pad", "x": 1140, "y": 540, "rotation": 0, "scale": 1 },
+    { "type": "coin", "x": 1260, "y": 320, "rotation": 0, "scale": 1 },
+    { "type": "coin", "x": 1320, "y": 280, "rotation": 0, "scale": 1 },
+
+    { "type": "spike", "x": 1500, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 1530, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 1560, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 1590, "y": 525, "rotation": 0, "scale": 1 },
+
+    { "type": "block", "x": 1740, "y": 510, "rotation": 0, "scale": 1 },
+    { "type": "block", "x": 1770, "y": 480, "rotation": 0, "scale": 1 },
+    { "type": "block", "x": 1800, "y": 450, "rotation": 0, "scale": 1 },
+    { "type": "block", "x": 1830, "y": 420, "rotation": 0, "scale": 1 },
+    { "type": "block", "x": 1860, "y": 420, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 1920, "y": 405, "rotation": 0, "scale": 1 },
+
+    { "type": "checkpoint", "x": 2100, "y": 510, "rotation": 0, "scale": 1 },
+
+    { "type": "portal_speed", "x": 2280, "y": 510, "rotation": 0, "scale": 1, "props": { "tier": 2 } },
+    { "type": "spike", "x": 2460, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 2520, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 2580, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "coin", "x": 2700, "y": 380, "rotation": 0, "scale": 1 },
+
+    { "type": "block", "x": 2820, "y": 510, "rotation": 0, "scale": 1 },
+    { "type": "block", "x": 2850, "y": 510, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 2940, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 2970, "y": 525, "rotation": 0, "scale": 1 },
+
+    { "type": "jump_orb", "x": 3120, "y": 380, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 3240, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 3270, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 3300, "y": 525, "rotation": 0, "scale": 1 },
+
+    { "type": "portal_gravity", "x": 3480, "y": 510, "rotation": 0, "scale": 1 },
+
+    { "type": "spike", "x": 3660, "y": 75, "rotation": 180, "scale": 1 },
+    { "type": "spike", "x": 3720, "y": 75, "rotation": 180, "scale": 1 },
+    { "type": "block", "x": 3900, "y": 90, "rotation": 0, "scale": 1 },
+    { "type": "block", "x": 3930, "y": 90, "rotation": 0, "scale": 1 },
+    { "type": "block", "x": 3960, "y": 90, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 4020, "y": 75, "rotation": 180, "scale": 1 },
+    { "type": "spike", "x": 4050, "y": 75, "rotation": 180, "scale": 1 },
+
+    { "type": "coin", "x": 4200, "y": 220, "rotation": 0, "scale": 1 },
+    { "type": "coin", "x": 4260, "y": 220, "rotation": 0, "scale": 1 },
+    { "type": "coin", "x": 4320, "y": 220, "rotation": 0, "scale": 1 },
+
+    { "type": "spike", "x": 4440, "y": 75, "rotation": 180, "scale": 1 },
+    { "type": "spike", "x": 4470, "y": 75, "rotation": 180, "scale": 1 },
+    { "type": "spike", "x": 4500, "y": 75, "rotation": 180, "scale": 1 },
+
+    { "type": "checkpoint", "x": 4680, "y": 90, "rotation": 0, "scale": 1 },
+
+    { "type": "portal_gravity", "x": 4860, "y": 90, "rotation": 0, "scale": 1 },
+
+    { "type": "jump_pad", "x": 5040, "y": 540, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 5220, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 5250, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 5280, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 5310, "y": 525, "rotation": 0, "scale": 1 },
+
+    { "type": "block", "x": 5460, "y": 510, "rotation": 0, "scale": 1 },
+    { "type": "block", "x": 5490, "y": 480, "rotation": 0, "scale": 1 },
+    { "type": "block", "x": 5520, "y": 450, "rotation": 0, "scale": 1 },
+    { "type": "block", "x": 5550, "y": 450, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 5640, "y": 435, "rotation": 0, "scale": 1 },
+
+    { "type": "coin", "x": 5760, "y": 360, "rotation": 0, "scale": 1 },
+
+    { "type": "portal_speed", "x": 5940, "y": 510, "rotation": 0, "scale": 1, "props": { "tier": 3 } },
+
+    { "type": "spike", "x": 6120, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 6180, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 6240, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "jump_pad", "x": 6360, "y": 540, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 6540, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 6600, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 6660, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 6720, "y": 525, "rotation": 0, "scale": 1 },
+
+    { "type": "block", "x": 6900, "y": 510, "rotation": 0, "scale": 1 },
+    { "type": "block", "x": 6930, "y": 510, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 6990, "y": 495, "rotation": 0, "scale": 1 },
+    { "type": "coin", "x": 7080, "y": 360, "rotation": 0, "scale": 1 },
+
+    { "type": "spike", "x": 7200, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 7230, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 7260, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 7290, "y": 525, "rotation": 0, "scale": 1 },
+    { "type": "spike", "x": 7320, "y": 525, "rotation": 0, "scale": 1 }
+  ]
+}

@@ -25,7 +25,15 @@ export async function POST(req: Request) {
         set: {
           percent: sql`GREATEST(${scores.percent}, EXCLUDED.percent)`,
           attempts: sql`${scores.attempts} + EXCLUDED.attempts`,
-          durationMs: sql`${scores.durationMs} + EXCLUDED.duration_ms`,
+          // For full completions we keep the best (lowest) time. Otherwise,
+          // accumulate practice/attempt time as before.
+          durationMs: sql`CASE
+            WHEN EXCLUDED.percent >= 100 AND ${scores.percent} >= 100
+              THEN LEAST(${scores.durationMs}, EXCLUDED.duration_ms)
+            WHEN EXCLUDED.percent >= 100
+              THEN EXCLUDED.duration_ms
+            ELSE ${scores.durationMs} + EXCLUDED.duration_ms
+          END`,
           coinsCollected: sql`GREATEST(${scores.coinsCollected}, EXCLUDED.coins_collected)`,
           achievedAt: sql`now()`,
         },

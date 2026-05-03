@@ -63,12 +63,27 @@ func _on_player_died(percent: float) -> void:
 func _on_player_completed() -> void:
     GameState.record_completion()
     var duration_ms := Time.get_ticks_msec() - attempt_start_ms
-    if level_data.has("id"):
+    var level_id := String(level_data.get("id", ""))
+    if not level_id.is_empty():
         ApiClient.submit_score(
-            String(level_data["id"]),
+            level_id,
             100.0,
             1,
             duration_ms,
             GameState.coins_collected,
             GameState.practice_mode,
         )
+    _notify_host_completed(level_id, duration_ms)
+
+func _notify_host_completed(level_id: String, duration_ms: int) -> void:
+    if not OS.has_feature("web"):
+        return
+    var payload := {
+        "type": "geome:levelComplete",
+        "levelId": level_id,
+        "durationMs": duration_ms,
+        "coins": GameState.coins_collected,
+        "practice": GameState.practice_mode,
+    }
+    var js := "window.parent && window.parent.postMessage(%s, '*');" % JSON.stringify(payload)
+    JavaScriptBridge.eval(js, true)

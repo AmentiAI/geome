@@ -6,7 +6,11 @@
       "Bash(mkdir -p /tmp/db-push)",
       "Read(//tmp/**)",
       "Bash(npm init *)",
-      "Bash(npm install *)"
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "Bash(echo \"exit=$?\")",
+      "Bash(npx next *)",
+      "Bash(2>/dev/null)"
     ]
   }
 }

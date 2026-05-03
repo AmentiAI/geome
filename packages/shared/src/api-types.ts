@@ -36,6 +36,7 @@ export const LeaderboardEntry = z.object({
   avatarUrl: z.string().nullable(),
   percent: z.number(),
   attempts: z.number().int(),
+  durationMs: z.number().int().optional(),
   achievedAt: z.string(),
 });
 export type LeaderboardEntry = z.infer<typeof LeaderboardEntry>;
